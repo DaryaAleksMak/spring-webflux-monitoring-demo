@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: psql
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: catalogue
+      POSTGRES_PASSWORD: catalogue
+      POSTGRES_DB: catalogue
