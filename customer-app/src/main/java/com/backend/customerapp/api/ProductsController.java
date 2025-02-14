@@ -1,6 +1,6 @@
 package com.backend.customerapp.api;
 
-import com.backend.customerapp.client.WebProductsClientImpl;
+import com.backend.customerapp.client.impl.WebClientProductsClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +12,9 @@ import reactor.core.publisher.Mono;
 @RequestMapping("customer/products")
 public class ProductsController {
 
-  private final WebProductsClientImpl productsClient;
+  private final WebClientProductsClient productsClient;
 
-  public ProductsController(WebProductsClientImpl productsClient) {
+  public ProductsController(WebClientProductsClient productsClient) {
     this.productsClient = productsClient;
   }
 
