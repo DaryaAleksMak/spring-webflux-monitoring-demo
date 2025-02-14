@@ -1,4 +1,4 @@
-package com.backend.customerapp.client;
+package com.backend.customerapp.api.payload;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

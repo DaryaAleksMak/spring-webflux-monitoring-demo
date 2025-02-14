@@ -1,6 +1,7 @@
-package com.backend.customerapp.repository;
+package com.backend.feedbackservice.repository;
 
-import com.backend.customerapp.entity.ProductReview;
+
+import com.backend.feedbackservice.entity.ProductReview;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
