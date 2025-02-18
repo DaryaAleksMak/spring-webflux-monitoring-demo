@@ -58,10 +58,10 @@ public class ProductController {
   }
 
   @PostMapping("add-to-favourites")
-  public Mono<String> addProductToFavourites(@ModelAttribute Mono<Product> productMono) {
-    return productMono.map(Product::id)
-        .flatMap(productId -> this.favouriteProductsClient.addProductToFavourites(productId)
-            .thenReturn("redirect:/customer/products/%d".formatted(productId)));
+  public Mono<String> addProductToFavourites(@ModelAttribute Product product) {
+
+    return this.favouriteProductsClient.addProductToFavourites(product.id())
+        .thenReturn("redirect:/customer/products/%d".formatted(product.id()));
 
   }
 

@@ -1,5 +1,5 @@
 package com.backend.customerapp.client.payload;
 
-public record NewFavouriteProductPayload(int product) {
+public record NewFavouriteProductPayload(int productId) {
 
 }

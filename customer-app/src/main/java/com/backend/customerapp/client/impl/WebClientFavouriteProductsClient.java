@@ -31,7 +31,7 @@ public class WebClientFavouriteProductsClient implements
   }
 
   @Override
-  public Mono<FavouriteProduct> findFavouriteProductByProductId(int productId) {
+  public Mono<FavouriteProduct> findFavouriteProductByProductId(Integer productId) {
     return this.webClient
         .get()
         .uri("/feedback-api/favourite-products/by-product-id/{productId}", productId)
@@ -41,7 +41,7 @@ public class WebClientFavouriteProductsClient implements
   }
 
   @Override
-  public Mono<FavouriteProduct> addProductToFavourites(int productId) {
+  public Mono<FavouriteProduct> addProductToFavourites(Integer productId) {
     return this.webClient
         .post()
         .uri("/feedback-api/favourite-products")
@@ -57,7 +57,7 @@ public class WebClientFavouriteProductsClient implements
   }
 
   @Override
-  public Mono<Void> removeProductFromFavourites(int productId) {
+  public Mono<Void> removeProductFromFavourites(Integer productId) {
     return this.webClient
         .delete()
         .uri("/feedback-api/favourite-products/by-product-id/{productId}", productId)

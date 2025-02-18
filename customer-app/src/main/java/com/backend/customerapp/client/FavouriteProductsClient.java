@@ -9,9 +9,9 @@ public interface FavouriteProductsClient {
 
   Flux<FavouriteProduct> findFavouriteProducts();
 
-  Mono<FavouriteProduct> findFavouriteProductByProductId(int productId);
+  Mono<FavouriteProduct> findFavouriteProductByProductId(Integer productId);
 
-  Mono<FavouriteProduct> addProductToFavourites(int productId);
+  Mono<FavouriteProduct> addProductToFavourites(Integer productId);
 
-  Mono<Void> removeProductFromFavourites(int productId);
+  Mono<Void> removeProductFromFavourites(Integer productId);
 }

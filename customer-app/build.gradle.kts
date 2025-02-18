@@ -25,7 +25,8 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
-	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.117.Final")
+//	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.117.Final")
+	runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.76.Final:osx-aarch_64")
 
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
