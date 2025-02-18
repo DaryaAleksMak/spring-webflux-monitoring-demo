@@ -1,7 +1,7 @@
 package com.backend.feedbackservice.controller;
 
 import com.backend.feedbackservice.entity.FavouriteProduct;
-import com.backend.feedbackservice.model.NewRecordReviewPayload;
+import com.backend.feedbackservice.model.NewFavouriteProductPayload;
 import com.backend.feedbackservice.service.FavouriteProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -38,9 +38,8 @@ public class FavouriteProductRestController {
 
   @PostMapping
   public Mono<ResponseEntity<FavouriteProduct>> addFavouriteProduct(@Valid @RequestBody
-  Mono<NewRecordReviewPayload> payloadMono, UriComponentsBuilder uriComponentsBuilder) {
-    return payloadMono.flatMap(
-            payload -> this.favouriteProductService.addProductToFavourites(payload.productId()))
+  NewFavouriteProductPayload payload, UriComponentsBuilder uriComponentsBuilder) {
+    return this.favouriteProductService.addProductToFavourites(payload.productId())
         .map(favouriteProduct ->
             ResponseEntity.created(
                     uriComponentsBuilder.replacePath("feedback-api/favourite-products/{id}")
